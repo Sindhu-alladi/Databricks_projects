@@ -18,9 +18,7 @@ The goal is to show how data moves from source to analytics, and how to fix qual
 
 ## Project Objective
 
-From the client side, I created a system with real data problems. From the engineer side, I processed it into useful datasets.
-
-This lets us analyze things like patient trends, treatment costs, doctor stats, visits, and claims.
+The main objective of this project was to understand how a real world healthcare data pipeline works by experiencing the process from both the client and data engineer perspectives. As a client, I designed and populated a Hospital Management System with realistic healthcare data and common data quality issues. As a data engineer, I built the complete pipeline that processes this raw data and moves it through different layers for analysis.
 
 ---
 
