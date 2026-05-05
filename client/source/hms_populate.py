@@ -8,7 +8,7 @@ fake = Faker('en_IN')
 random.seed(42)
 Faker.seed(42)
 
-output_folder = "hms_csv_output"
+output_folder = "C:\\DataEngineer_project\\client\\hms_csv_output"
 os.makedirs(output_folder, exist_ok=True)
 
 specialties = [

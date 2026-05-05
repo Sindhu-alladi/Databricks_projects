@@ -65,7 +65,7 @@ claim_date,
 settled_date from claims;
 
 
-select * from vw_claims;
+select * from vw_treatments;
 
 
 

@@ -429,7 +429,7 @@
     <created_date>2026/04/06 16:09:01.739</created_date>
     <modified_user>-</modified_user>
     <modified_date>2026/04/06 16:09:01.739</modified_date>
-    <key_for_session_key/>
+    <key_for_session_key>H4sIAAAAAAAA/wMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -437,7 +437,7 @@
   <order>
     <hop>
       <from>CSV file input</from>
-      <to>Table output</to>
+      <to>Insert / update</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -587,14 +587,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>200</xloc>
-      <yloc>100</yloc>
+      <xloc>192</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Table output</name>
-    <type>TableOutput</type>
+    <name>Insert / update</name>
+    <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -604,24 +604,68 @@
       <schema_name/>
     </partitioning>
     <connection>hms_db</connection>
-    <schema>hms_db</schema>
-    <table>patients</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema>hms_db</schema>
+      <table>patients</table>
+      <key>
+        <name>patient_id</name>
+        <field>patient_id</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>patient_id</name>
+        <rename>patient_id</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>mrn</name>
+        <rename>mrn</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>full_name</name>
+        <rename>full_name</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>date_of_birth</name>
+        <rename>date_of_birth</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>gender</name>
+        <rename>gender</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>city</name>
+        <rename>city</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>blood_type</name>
+        <rename>blood_type</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>phone</name>
+        <rename>phone</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>created_at</name>
+        <rename>created_at</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>updated_at</name>
+        <rename>updated_at</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -631,8 +675,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>400</xloc>
-      <yloc>100</yloc>
+      <xloc>432</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
